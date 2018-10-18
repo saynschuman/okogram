@@ -1,0 +1,11 @@
+[ver:1,total:2100]
+src/App.js:463,1539867600:306,1539871200:157,m
+src/components/Root.js:401,1539867600:84,1539871200:317,m
+src/store/index.js:388,1539867600:388,m
+src/reducer/index.js:286,1539867600:239,1539871200:47,m
+src/reducer/counter.js:257,1539867600:37,1539871200:220,m
+src/actions/index.js:117,1539867600:90,1539871200:27,m
+src/components/counter.js:102,1539867600:30,1539871200:72,m
+src/reducer/sounter.js:40,1539867600:40,d
+src/index.js:38,1539867600:38,m
+src/constants.js:8,1539867600:8,m
