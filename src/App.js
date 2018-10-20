@@ -1,13 +1,13 @@
 import React from "react";
 import Counter from "./components/counter";
-import Calendar from "./components/Calendar/Calendar";
+import CalendarEditable from "./components/CalendarEditable/CalendarEditable";
 
 class App extends React.Component {
   render() {
     return (
       <div>
         <Counter />
-        <Calendar />
+        <CalendarEditable />
       </div>
     );
   }
