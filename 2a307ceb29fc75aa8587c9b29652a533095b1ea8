@@ -1,0 +1,16 @@
+[ver:1,total:4680]
+src/components/Calendar/Calendar.js:2500,1539939600:820,1539943200:880,1540018800:558,1540022400:242,m
+src/App.js:831,1539871200:180,1539939600:519,1539943200:10,1540018800:115,1540022400:7,m
+src/components/Root.js:277,1539939600:215,1540018800:62,r
+src/components/Calendar/ExampleControlSlot.js:266,1540022400:266,m
+node_modules/react-big-calendar/lib/css/react-big-calendar.css:180,1539939600:150,1539943200:30,r
+src/components/Calendar/Calendar.css:155,1539943200:130,1540018800:25,m
+src/components/counter/counter.js:112,1539939600:112,m
+node_modules/react-tackle-box/Slot.js:80,1540022400:80,r
+src/components/Calendar/ControlSlot.js:65,1539943200:30,1540018800:35,d
+src/reducer/index.js:60,1539939600:60,r
+package.json:60,1540018800:60,m
+README.md:42,1539939600:12,1540018800:30,r
+src/components/counter.js:40,1539939600:32,1540018800:8,r
+yarn.lock:7,1540018800:7,m
+src/components/Calendar/events.js:5,1540022400:5,m
