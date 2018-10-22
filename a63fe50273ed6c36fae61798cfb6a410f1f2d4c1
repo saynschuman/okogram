@@ -1,0 +1,10 @@
+[ver:1,total:4620]
+src/components/Crop/Crop.js:3055,1540209600:360,1540213200:2415,1540216800:280,m
+src/components/Crop/style.css:490,1540213200:410,1540216800:80,m
+src/components/SelectPost/SelectPost.js:375,1540209600:375,m
+src/components/Crop/res.js:235,1540213200:235,m
+src/components/CalendarEditable/CalendarEditable.js:215,1540206000:200,1540209600:15,m
+src/App.js:140,1540206000:20,1540209600:120,r
+src/components/Crop/style.scss:45,1540213200:45,d
+src/components/CalendarEditable/Calendar.css:35,1540206000:20,1540213200:15,r
+src/App.jsents/SelectPost/SelectPost.js:30,1540209600:30,d
