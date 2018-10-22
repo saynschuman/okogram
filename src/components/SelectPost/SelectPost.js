@@ -5,13 +5,13 @@ import moment from "moment";
 
 const SelectPost = props => {
   const date = props.date;
-  var now = moment(date);
+  const choodenDate = moment(date);
   return (
     <div>
       <div>Добро пожаловать в ваш календарь постов!</div>
       <br />
       {props.date ? (
-        <div>{now.format("MMMM DD YYYY")}</div>
+        <div>{choodenDate.format("MMMM DD YYYY")}</div>
       ) : (
         <div>(Выберите дату)</div>
       )}
