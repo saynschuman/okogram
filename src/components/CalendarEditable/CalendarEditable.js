@@ -15,18 +15,18 @@ class Selectable extends React.Component {
   };
 
   handleSelect = selected => {
-    const title = window.prompt("New Event name");
-    if (title)
-      this.setState({
-        events: [
-          ...this.state.events,
-          {
-            start: selected.start,
-            end: selected.end,
-            title
-          }
-        ]
-      });
+    // const title = window.prompt("New Event name");
+    // if (title)
+    //   this.setState({
+    //     events: [
+    //       ...this.state.events,
+    //       {
+    //         start: selected.start,
+    //         end: selected.end,
+    //         title
+    //       }
+    //     ]
+    //   });
     this.props.youChoose(selected.slots);
     this.setState({ selectedDate: selected.start });
     console.log(selected);

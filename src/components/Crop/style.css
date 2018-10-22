@@ -1,0 +1,32 @@
+input[type="file"] {
+  display: none;
+}
+
+.move div {
+  text-align: center;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.cropWrapper {
+  width: 320px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+}
+
+canvas {
+  width: 100%;
+}
+
+.cropItemsWrapper {
+  width: 710px;
+}
+
+button {
+  margin-right: 5px;
+}
+
+i {
+  display: block;
+}
