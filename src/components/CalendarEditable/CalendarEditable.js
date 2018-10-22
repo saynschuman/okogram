@@ -10,24 +10,27 @@ const propTypes = {};
 
 class Selectable extends React.Component {
   state = {
-    events: events
+    events: events,
+    selectedDate: ""
   };
 
-  // handleSelect = ({ start }) => {
-  //   const title = window.prompt("New Event name");
-  //   if (title)
-  //     this.setState({
-  //       events: [
-  //         ...this.state.events,
-  //         {
-  //           start,
-  //           end,
-  //           title
-  //         }
-  //       ]
-  //     });
-  //   console.log(start);
-  // };
+  handleSelect = selected => {
+    // const title = window.prompt("New Event name");
+    // if (title)
+    //   this.setState({
+    //     events: [
+    //       ...this.state.events,
+    //       {
+    //         start,
+    //         end,
+    //         title
+    //       }
+    //     ]
+    //   });
+    this.props.youChoose(selected.slots);
+    this.setState({ selectedDate: selected.start });
+    console.log(selected);
+  };
 
   render() {
     const localizer = BigCalendar.momentLocalizer(moment);
@@ -40,8 +43,8 @@ class Selectable extends React.Component {
           defaultView={BigCalendar.Views.MONTH}
           scrollToTime={new Date(1970, 1, 1, 6)}
           defaultDate={new Date(2018, 9, 22)}
-          onSelectEvent={event => alert(event.title)}
-          onSelectSlot={selected => this.props.youChoose(selected.slots)}
+          onSelectEvent={event => console.log(event)}
+          onSelectSlot={selected => this.handleSelect(selected)}
         />
       </>
     );

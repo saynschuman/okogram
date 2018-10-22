@@ -331,10 +331,16 @@ button.rbc-input::-moz-focus-inner {
   color: inherit;
   text-decoration: none;
 }
+
+.rbc-day-bg:hover {
+  background: rgba(000, 000, 000, 0.1);
+}
+
 .rbc-row-bg {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  cursor: pointer;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
