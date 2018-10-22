@@ -1,4 +1,4 @@
-import { DECREMENT, INCREMENT } from "../constants";
+import { DECREMENT, INCREMENT, YOUCHOOSE } from "../constants";
 
 export function increment() {
   return {
@@ -9,5 +9,14 @@ export function increment() {
 export function decrement() {
   return {
     type: DECREMENT
+  };
+}
+
+export function youChoose(date) {
+  return {
+    type: YOUCHOOSE,
+    payload: {
+      date
+    }
   };
 }

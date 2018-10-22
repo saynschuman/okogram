@@ -1,53 +1,47 @@
 import React from "react";
 import BigCalendar from "react-big-calendar";
 import events from "./events";
-import ExampleControlSlot from "./ExampleControlSlot";
+import { connect } from "react-redux";
 import moment from "moment";
 import "./Calendar.css";
+import { youChoose } from "../../actions";
 
 const propTypes = {};
 
 class Selectable extends React.Component {
-  constructor(...args) {
-    super(...args);
-
-    this.state = { events };
-  }
-
-  handleSelect = ({ start, end }) => {
-    const title = window.prompt("New Event name");
-    if (title)
-      this.setState({
-        events: [
-          ...this.state.events,
-          {
-            start,
-            end,
-            title
-          }
-        ]
-      });
+  state = {
+    events: events
   };
+
+  // handleSelect = ({ start }) => {
+  //   const title = window.prompt("New Event name");
+  //   if (title)
+  //     this.setState({
+  //       events: [
+  //         ...this.state.events,
+  //         {
+  //           start,
+  //           end,
+  //           title
+  //         }
+  //       ]
+  //     });
+  //   console.log(start);
+  // };
 
   render() {
     const localizer = BigCalendar.momentLocalizer(moment);
     return (
       <>
-        <ExampleControlSlot.Entry waitForOutlet>
-          <strong>
-            Click an event to see more info, or drag the mouse over the calendar
-            to select a date/time range.
-          </strong>
-        </ExampleControlSlot.Entry>
         <BigCalendar
           selectable
           localizer={localizer}
           events={this.state.events}
-          defaultView={BigCalendar.Views.WEEK}
+          defaultView={BigCalendar.Views.MONTH}
           scrollToTime={new Date(1970, 1, 1, 6)}
-          defaultDate={new Date(2015, 3, 12)}
+          defaultDate={new Date(2018, 9, 22)}
           onSelectEvent={event => alert(event.title)}
-          onSelectSlot={this.handleSelect}
+          onSelectSlot={selected => this.props.youChoose(selected.slots)}
         />
       </>
     );
@@ -56,4 +50,7 @@ class Selectable extends React.Component {
 
 Selectable.propTypes = propTypes;
 
-export default Selectable;
+export default connect(
+  null,
+  { youChoose }
+)(Selectable);
