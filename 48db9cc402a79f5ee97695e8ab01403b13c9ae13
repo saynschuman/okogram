@@ -1,0 +1,7 @@
+[ver:1,total:2100]
+src/components/CalendarEditable/CalendarEditable.js:1612,1540202400:1612,m
+src/components/CalendarEditable/Calendar.css:260,1540202400:260,m
+src/components/CalendarEditable/events.js:120,1540202400:120,m
+src/components/SelectPost/SelectPost.js:76,1540202400:76,r
+src/reducer/chooseDate.js:20,1540202400:20,r
+src/components/CalendarEditable/helpers/addPost.js:12,1540202400:12,r
