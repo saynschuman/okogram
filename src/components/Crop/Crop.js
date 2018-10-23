@@ -27,11 +27,14 @@ class ImgDropAndCrop extends Component {
       imgSrc: null,
       imgSrcExt: null,
       crop: {
-        x: 10,
-        y: 10,
-        width: 80,
-        height: 80
-      }
+        aspect: 0.5625,
+        height: 90,
+        width: 28.471804511278197,
+        x: 31.20300751879699,
+        y: 0
+      },
+      isChanged: false,
+      isVisibleCrop: true
     };
   }
 
@@ -84,10 +87,10 @@ class ImgDropAndCrop extends Component {
   };
 
   handleImageLoaded = image => {
-    //console.log(image)
+    console.log(image);
   };
   handleOnCropChange = crop => {
-    this.setState({ crop: crop });
+    this.setState({ crop: crop, isChanged: true });
   };
   handleOnCropComplete = (crop, pixelCrop) => {
     //console.log(crop, pixelCrop)
@@ -132,6 +135,12 @@ class ImgDropAndCrop extends Component {
     this.fileInputRef.current.value = null;
   };
 
+  hideCrop = () => {
+    this.setState({
+      isVisibleCrop: false
+    });
+  };
+
   handleFileSelect = event => {
     // console.log(event)
     const files = event.target.files;
@@ -172,24 +181,30 @@ class ImgDropAndCrop extends Component {
           onChange={this.handleFileSelect}
         />
         {imgSrc !== null ? (
-          <div className={"cropItemsWrapper"}>
-            <i>Измените размер для обрезки фото</i>
-            <br />
-            <div className={"cropWrapper"}>
-              <ReactCrop
-                src={imgSrc}
-                crop={this.state.crop}
-                onImageLoaded={this.handleImageLoaded}
-                onComplete={this.handleOnCropComplete}
-                onChange={this.handleOnCropChange}
-              />
+          this.state.isVisibleCrop && (
+            <div className={"PreWrapper"}>
+              <div className={"cropItemsWrapper"}>
+                <div className={"cropWrapperImage"}>
+                  <i>Измените размер для обрезки фото</i>
+                  <br />
+                  <div className="cropImageInner">
+                    <ReactCrop
+                      src={imgSrc}
+                      crop={this.state.crop}
+                      onImageLoaded={this.handleImageLoaded}
+                      onComplete={this.handleOnCropComplete}
+                      onChange={this.handleOnCropChange}
+                    />
+                  </div>
+                  {this.state.isChanged && (
+                    <button className={"button-ready"} onClick={this.hideCrop}>
+                      Готово
+                    </button>
+                  )}
+                </div>
+              </div>
             </div>
-            <div className={"cropWrapper"}>
-              <canvas ref={this.imagePreviewCanvasRef} />
-              {/* <button onClick={this.handleDownloadClick}>Скачать</button>
-              <button onClick={this.handleClearToDefault}>Очистить</button> */}
-            </div>
-          </div>
+          )
         ) : (
           <div className={"move"}>
             <Dropzone
@@ -202,6 +217,14 @@ class ImgDropAndCrop extends Component {
             </Dropzone>
           </div>
         )}
+        <div className={"cropWrapperPreview"}>
+          <canvas ref={this.imagePreviewCanvasRef} />
+          {this.state.isVisibleCrop === false && (
+            <div>
+              <button onClick={this.handleDownloadClick}>Скачать</button>
+            </div>
+          )}
+        </div>
       </div>
     );
   }
